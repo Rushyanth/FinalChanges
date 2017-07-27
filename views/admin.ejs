@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN-Msrmh</title>
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+</head>
+<body>
+<div id="page">
+    <div id="pagetop">
+        <p ><img src="/images/purple-logo.jpg" style="width: 200px; height: 65px; float: left; position: absolute; left: 0px; "><div style="font-size: x-large ; text-align: center; padding-top: 2%">Admin login</div></p>
+    </div>
+    <div id="header">ENTER ADMIN DETAILS </div>
+    <div id="main">
+        <div >
+            <form action="/admin" method="POST" class="content">
+                <input type="text" name="u" class ="edit" placeholder="Username" required="required" /><br><br><br>
+                <input type="password" name="p" class ="edit" placeholder="Password" required="required" /><br><br><br>
+                <button type="submit" class="Button">    LOGIN   </button><br><br><br>
+            </form>
+            <form class="content" method="post">
+                <button  formaction="/forpwd" class="Button" >Forgot password?</button>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh online interview.
+        </p>
+    </div>
+</div>
+</body>
+</html>

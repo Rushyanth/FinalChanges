@@ -1,0 +1,50 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+
+    <title>Admin</title>
+</head>
+
+<body>
+<div style="text-align: center">
+    <h2 style="color: black; font-size: x-large">Choose questions to delete</h2>
+    <form action="/admin/<%=dept%>" method="post">
+        <table border="1" id="tableSearch" class="responstable">
+            <tr>
+                <td><b>Select</b></td>
+                <td><b>S.No</b></td>
+                <td><b>Question</b></td>
+                <td><b>Option 1</b></td>
+                <td><b>Option 2</b></td>
+                <td><b>Option 3</b></td>
+                <td><b>Option 4</b></td>
+                <td><b>Answer</b></td>
+            </tr>
+
+
+            <%
+            for(var i = 0;i < parseInt(count);i++)
+            {
+            %>
+            <tr>
+                <td><b><input type="checkbox" name="question" value="<%=questions[i]%>"/></b></td>
+                <td><b><%= qno[i]%></b></td>
+                <td><b><%= questions[i] %></b></td>
+                <td><b><%= option1[i]%></b></td>
+                <td><b><%= option2[i]%></b></td>
+                <td><b><%= option3[i]%></b></td>
+                <td><b><%= option4[i]%></b></td>
+                <td><b><%= correct[i]%></b></td>
+            </tr>
+            <%
+            }
+            %>
+        </table>
+
+        <input type="submit" class="Button" value="Delete"/>
+    </form>
+</div>
+</body>
+</html>

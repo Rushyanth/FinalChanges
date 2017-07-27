@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+
+    <title>Admin</title>
+</head>
+
+<body>
+<div id="page">
+    <div id="pagetop">
+        <h3>ADMINISTRATOR</h3>
+        <div class="links">
+            <form method="post">
+                <ul>
+                    <li><button formaction="/logout" class="new1" >Logout</button></li>
+                    <li><button formaction="/quizdetail" class="new1">Quiz details</button></li>
+                    <li><button formaction="/adlogin" class="new1"> Admin</button></li>
+                    <li><button formaction="/admins" class="new1" >Question set</button></li>
+
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div id="main">
+        <div class="content">
+            <div class="main_top">
+                <h1>Change quiz details</h1><br><br>
+            </div>
+
+            <div class="main_body">
+                <form method="POST" >
+                    <input type="text" name="noquestions" class="new" placeholder="Enter the number of quiz questions" required="required" /><br><br>
+                    <input type="text" name="timelimit" class="new" placeholder="Enter the time limit of quiz" required="required" /><br><br>
+                    <button type="submit" class="Button" formaction="/quizd" >Change</button><br><br><br>
+                </form>
+                <h1>Change the user password</h1><br><br>
+                <form method="POST" >
+                    <input type="password" name="userpwd" class="new"  placeholder="New User Password" required="required" /><br><br>
+                    <button type="submit" class="Button" formaction="/newuserpwd" >Change</button><br><br><br>
+                </form>
+
+            </div>
+
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh quiz admin page.
+        </p>
+    </div>
+</div>
+</body>
+</html>

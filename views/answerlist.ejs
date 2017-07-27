@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/styles/style.css'/>
+</head>
+<body >
+<div style="text-align: right">    <button class="buttonDownload" type="button" name="download" value="Download" onclick="PrintDoc()">Print </button><br><br> </div>
+
+<div id="printarea">
+
+
+    <h1  style="font-size: x-large; font-family: 'Bookman Old Style'; color: black; text-align: center">Candidate test details</h1><br><br>
+    <b style="font-size: large; font-family: 'Bookman Old Style'; color: black">Name        : <%= Name%></b><br><br>
+    <b style="font-size: large; font-family: 'Bookman Old Style'; color: black">Mobile      : <%= mobile%></b><br><br>
+    <b style="font-size: large; font-family: 'Bookman Old Style'; color: black">Email       : <%= Email%> </b><br><br>
+    <b style="font-size: large; font-family: 'Bookman Old Style'; color: black">Total Marks : <%= Marks%></b><br><br>
+    <table border="1" class="responstable"  >
+        <tr>
+            <td><b>S.No</b></td>
+            <td><b>Question</b></td>
+            <td><b>Answer</b></td>
+            <td><b>Correct Answer</b></td>
+        </tr>
+        <%
+        for(var i=0;i<count;i++){
+        %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%=questions[i]%></td>
+            <td><%=aAnswer[i]%></td>
+            <td><%=cAnswers[i]%></td>
+        </tr>
+        <%
+        }
+        %>
+    </table>
+</div>
+
+<script>
+    function PrintDoc() {
+        var toPrint = document.getElementById('printarea');
+        var popupWin = window.open('', '_blank', 'width=350,height=150,location=no,left=200px');
+        popupWin.document.open();
+        popupWin.document.write('<html><link rel="stylesheet" type="text/css" href="/styles/style.css" /></head><body onload="window.print()">')
+        popupWin.document.write(toPrint.innerHTML);
+        popupWin.document.write('</html>');
+        popupWin.document.close();
+    }
+</script>
+</body>
+</html>

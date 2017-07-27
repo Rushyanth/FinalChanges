@@ -1,0 +1,64 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+
+    <title>Admin</title>
+</head>
+
+<body>
+<div id="page">
+    <div id="pagetop">
+        <h3>ADMINISTRATOR</h3>
+        <div class="links">
+            <form method="post">
+                <ul>
+                    <li><button formaction="/logout" class="new1" >Logout</button></li>
+                    <li><button formaction="/quizdetail" class="new1">Quiz details</button></li>
+                    <li><button formaction="/adlogin" class="new1"> Admin</button></li>
+                    <li><button formaction="/admins" class="new1">Question set</button></li>
+
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div id="main">
+        <div class="content">
+            <div class="main_top">
+                <h1>Change password</h1><br><br>
+            </div>
+
+            <div class="main_body">
+                <form method="POST" >
+                    <input type="text" name="cur" class="new" placeholder="Current Username" required="required" /><br><br>
+                    <input type="text" name="nur" class="new" placeholder="New Username" required="required" /><br><br>
+                    <input type="password" name="npw" class="new"  placeholder="New Password" required="required" /><br><br>
+                    <input type="email" name="nem" class="new"  placeholder="New email Id" required="required" /><br><br>
+                    <button type="submit" class="Button" formaction="/change" >Change</button><br><br><br>
+                </form>
+                <!--<h1>Add new admin</h1><br><br>-->
+                <!--<form method="POST" >-->
+                    <!--<input type="text" name="nu" class="new" placeholder="New Username" required="required" /><br><br>-->
+                    <!--<input type="password" name="np" class="new"  placeholder="New Password" required="required" /><br><br>-->
+                    <!--<input type="email" name="ne" class="new"  placeholder="New email Id" required="required" /><br><br>-->
+                    <!--<button type="submit" class="Button" formaction="/add" >Add</button><br><br><br>-->
+                <!--</form>-->
+                <!--<h1>Delete admin</h1><br><br>-->
+                <!--<form method="POST" >-->
+                    <!--<input type="text" name="cu" class="new" placeholder="Username" required="required" /><br><br>-->
+                    <!--<button type="submit" class="Button" formaction="/delete" >Delete</button><br><br><br>-->
+                <!--</form>-->
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh quiz admin page.
+        </p>
+    </div>
+
+</div>
+</body>
+</html>

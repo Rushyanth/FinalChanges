@@ -1,0 +1,55 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+    <title>Start quiz</title>
+</head>
+
+<body>
+<div id="page">
+    <div id="pagetop">
+        <p ><img src="/images/purple-logo.jpg" style="width: 200px; height: 65px; float: left; position: absolute; left: 0px; "><div style="font-size: x-large ; text-align: center; padding-top: 2%">START QUIZ</div></p>
+    </div>
+
+    <div id="header">   Read the instructions carefully     </div>
+
+    <div id="main">
+        <div class="content">
+            <div class="main_top">
+            </div>
+            <div class="main_body">
+                <h2>THE QUIZ CONSISTS OF <%= num%> QUESTIONS</h2><br>
+                <h2>THE TIME LIMIT TO FINISH THE QUIZ IS <%= tlimit%> MINUTES</h2><br>
+                <h2>CLICK START TO BEGIN THE QUIZ</h2><br>
+                <h2>ALL THE BEST!!!</h2>
+                <br><br>
+            </div>
+            <div class="b" style="text-align: center">
+                <br>
+                    <!--<a href="/test?questionnumber=1">-->
+                    <button class="btn" onclick="fn()">
+                        START
+                    </button>
+                <!--</a>-->
+                <script>
+                    function fn() {
+
+                        window.close();
+
+                        window.open("/test?questionnumber=1");
+
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh online interview.
+        </p>
+    </div>
+</div>
+</body>
+</html>

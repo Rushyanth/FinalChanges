@@ -1,0 +1,123 @@
+.button-container {
+    display: inline-table;
+    width: 350px;
+    background: whitesmoke;
+    overflow-y: auto;
+    padding-left: 0%;
+    padding-top: 10%;
+
+}
+
+.button-container > a {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 5px;
+
+}
+.btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Arial;
+    color: black;
+    font-size: 24px;
+    background: lightblue;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+
+.Button {
+    -moz-box-shadow: 3px 4px 0px 0px #899599;
+    -webkit-box-shadow: 3px 4px 0px 0px #899599;
+    box-shadow: 3px 4px 0px 0px #899599;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
+    background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+    background-color:#ededed;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    color:#3a8a9e;
+    font-family:Arial;
+    font-size:21px;
+    padding:10px 52px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+    top:50%;
+}
+.Button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+    background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+    background-color:#bab1ba;
+}
+.Button:active {
+    position:relative;
+    top:1px;
+}.new1 {
+     -moz-box-shadow: 3px 4px 0px 0px #899599;
+     -webkit-box-shadow: 3px 4px 0px 0px #899599;
+     box-shadow: 3px 4px 0px 0px #899599;
+     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
+     background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+     background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+     background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+     background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+     background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+     background-color:#ededed;
+     -moz-border-radius:10px;
+     -webkit-border-radius:10px;
+     border-radius:10px;
+     border:1px solid #d6bcd6;
+     display:inline-block;
+     cursor:pointer;
+     color:black;
+     font-family:Arial;
+     font-size:14px;
+     padding:10px 20px;
+     text-decoration:none;
+     text-shadow:0px 1px 0px #e1e2ed;
+     top:50%;
+ }
+#pagetop
+{
+    padding-left: 100px;
+    height:143px;
+}
+
+#pagetop h1
+{
+    display:block;
+    float:left;
+    line-height:90px;
+    color:#FFFFFF;
+    text-align:left;
+    font-size:27px;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left:23px;
+}
+

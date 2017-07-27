@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN-Msrmh</title>
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+</head>
+<body>
+<div id="page">
+    <div id="pagetop">
+        <p ><img src="/images/purple-logo.jpg" style="width: 200px; height: 65px; float: left; position: absolute; left: 0px; "><div style="font-size: x-large ; text-align: center; padding-top: 2%">Result</div></p>
+    </div>
+    <div id="header">Submitted </div>
+    <div id="main">
+        <div class="content">
+            <h1 style="text-align: center; color: #024457;">Thank you for taking the quiz</h1><br><br>
+            <%if (score >= 0) { %>
+            <h1 style="text-align: center; color: #024457">Your Score is :     <%=score%>/20</h1>
+            <% }
+            else{ %>
+            <h1 style="text-align: center; color: #024457">Your Score is :     0/20</h1>
+            <% }
+            %>
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh online interview.
+        </p>
+    </div>
+</div>
+</body>
+</html>

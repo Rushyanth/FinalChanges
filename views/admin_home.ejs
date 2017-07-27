@@ -1,0 +1,185 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+
+    <title>Admin</title>
+</head>
+
+<body>
+<div style="display: block; font-size: 0px">
+    <div style="display: inline-block; height: auto">
+        <img src="/images/purple-logo.jpg" alt="" />
+    </div>
+    <div style="display: inline-block;">
+        <img style="width: inherit" src="/images/logo.jpg" alt="" />
+    </div>
+</div>
+<div class="center">
+    <form action="/admin" method="get" style="padding-left: 0px">
+        <br>
+        <button type="submit" name="back" class="myButton" value="Back">Back</button><br>
+    </form>
+    <br><br>
+    <h1 style="font-size: 30px; color:  #07144B; align-content: center">1. Click to Add questions  <button onclick="add()" class="myButton">Add</button></h1>
+    <br><br>
+    <form action="/admin/<%=dept%>" method="get" class="elegant-aero">
+        <p id="add_question" style="display: none; font-family: 'Adobe Caslon Pro'; font-size: large; color: black">Add Question<br>
+            <textarea required="required" style=" font-size: large; color: black" placeholder="Enter Question here..." rows="4" cols="50" name="question"></textarea><br>
+
+            <label style=" font-size: large; color: black" for="option1">Option 1 :
+                <input type="text"  name="option1" required="required">
+            </label>
+            <label style=" font-size: large; color: black" for="option2">Option 2 :
+                <input type="text" name="option2" required="required">
+            </label>
+            <label style=" font-size: large; color: black" for="option3">Option 3 :
+                <input type="text" name="option3" required="required">
+            </label>
+            <label style=" font-size: large; color: black" for="option4">Option 4 :
+                <input type="text" name="option4" required="required">
+            </label>
+            <label style=" font-size: large; color: black" for="answer">Answer &nbsp;&nbsp;:
+                <select  style=" font-size: large; color: black" type="text" name="answer" class="form-style-5" required="required">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+
+                </select>
+            </label>
+
+            <button type="submit" onclick="display()" class="myButton">Add Questions</button>
+        </p>
+    </form>
+    <script>
+        function display() {
+            document.getElementById("success_message").innerHTML = "Action Successful";
+            document.getElementById("success_message").style.display = 'block';
+            // window.location = "https://www.google.co.in";
+        }
+        function add() {
+            document.getElementById("add_question").style.display = 'block';
+        }
+        function search() {
+            if(document.getElementById("search").value === "")
+            {
+                document.getElementById("searchNotify").style.display = "block";
+                document.getElementById("searchNotify").innerHTML = "Search is Empty";
+                document.getElementById("tableMain").style.display = "block";
+                document.getElementById("tableSearch").style.display = "none";
+            }
+            else
+            {
+                document.getElementById("tableMain").style.display = "none";
+                document.getElementById("tableSearch").style.display = "block";
+                document.getElementById("searchNotify").style.display = "none";
+            }
+        }
+    </script>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <br><br>
+    <h1 style="font-size: 30px; color:  #07144B">2. Click to Delete questions   <a href="/admin/questionlist/<%=dept%>" name="ondelete" class="myButton">Delete </a> </h1>
+    <br><br>
+
+    <br><br>
+    <h1 id="reportP" style="font-size: 30px; color:  #07144B">3. Daily Report</h1>
+    <br><br>
+
+    <form action="/adminDayReport/<%=dept%>" method="get" target="_blank" style="position: relative; text-align: center">
+        <select id="seldate" name="seldate"  class="Button" style="width: 50%;">
+            <%
+            for(var i=0;i<parseInt(dateCount);i++)
+            {
+                console.log(dates[i]);
+            %>
+            <option  value="<%= dates[i]%>"><%=dates[i]%></option>
+            <%
+            }
+            %>
+        </select><br><br>
+
+        <button type="submit" value="Go" name="goButton" class="myButton">Go</button>
+
+    </form>
+    <br><br>
+    <br><br>
+
+    <h1 style="font-size: 30px; color: #07144B">4. List Of the Attendees</h1><br><br>
+
+    <form action="/admin/<%=dept%>" method="get" style="text-align: center">
+        <input type="search" id="search" placeholder="Search for candidate.." name="search" class="Button">
+        <button type="submit" class="myButton" >Search</button><br>
+    </form>
+
+    <p id="searchNotify"></p>
+
+    <%
+    if(searchCount==0){
+    %>
+    <br><br>
+    <form action="/admin/<%=dept%>" method="get">
+        <table border="1" id="tableMain" class="responstable">
+            <tr>
+                <td><b>Select</b></td>
+                <td><b>Date</b></td>
+                <td><b>Name</b></td>
+                <td><b>Mobile</b></td>
+                <td><b>Email</b></td>
+                <td><b>Score</b></td>
+            </tr>
+            <%
+            for(var i=0;i<attendeeCount;i++){
+            %>
+            <tr>
+                <td><input type="checkbox" name="attendee" value="<%=aMobile[i]%>"/></td>
+                <td><%=aDate[i]%></td>
+                <td><%=aName[i]%></td>
+                <td><%=aMobile[i]%></td>
+                <td><%=aEmail[i]%></td>
+                <td><a href="/admin/answerlist/<%=dept%>/<%=aMobile[i]%>"  target="_blank"> <p><u><%=aRes[i]%></u></p></a></td>
+            </tr>
+            <%
+            }
+            %>
+        </table>
+        <div style="text-align: center">
+            <input type="submit" class="myButton" value="Delete"/> <br><br>
+        </div>
+    </form>
+    <%
+    }
+    else {
+    %>
+    <table border="1" id="tableSearch" class="responstable">
+        <tr>
+            <td><b>Date</b></td>
+            <td><b>Name</b></td>
+            <td><b>Mobile</b></td>
+            <td><b>Email</b></td>
+            <td><b>Score</b></td>
+        </tr>
+        <%
+        for(i=0;i<searchCount;i++){
+        %>
+        <tr>
+            <td><%=sDate[i]%></td>
+            <td><%=sName[i]%></td>
+            <td><%=sMobile[i]%></td>
+            <td><%=sEmail[i]%></td>
+            <td><a href="/admin/answerlist/<%=dept%>/<%=sMobile[i]%>"  target="_blank"> <p><u><%=sRes[i]%></u></p></a></td>
+        </tr>
+        <%
+        }
+        %>
+    </table>
+    <br><br>
+    <%
+    }
+    %>
+</div>
+</body>
+</html>

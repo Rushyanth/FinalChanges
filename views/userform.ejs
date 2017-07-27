@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN-Msrmh</title>
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+</head>
+<body>
+<div id="page">
+    <div id="pagetop">
+        <p ><img src="/images/purple-logo.jpg" style="width: 200px; height: 65px; float: left; position: absolute; left: 0px; "><div style="font-size: x-large ; text-align: center; padding-top: 2%">LOGIN FORM</div></p>
+    </div>
+    <div id="header">* Required </div>
+    <div id="main">
+        <div class="content">
+            <div class="form-style-5">
+                <form action="/userform" method="post">
+                    <fieldset >
+                        <legend><span class="number">1</span> Enter Info</legend>
+                        <input type="text" name="field1" placeholder="Your Name *" required="required">
+                        <input type="email" name="field2" placeholder="Your Email *" required="required">
+                        <input type="number" name="field3" placeholder="Your mobile number*" required="required">
+                        <label for="job" style="font-family: 'Bookman Old Style';color: #267B9B ;font-size: medium ">Select Department</label>
+                        <select id="job" name="field4">
+                            <%
+                            for(var i=0;i<arrlength;i++)
+                            {
+                            %>
+                            <option value="<%=arr[i]%>"><%=arr[i]%></option>
+                            <%
+                            }
+                            %>
+                        </select>
+                        <input type="password" name="field5" placeholder="Enter password *" required="required">
+                    </fieldset>
+                    <input type="submit" value="START" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh online interview.
+        </p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel='stylesheet' href='/styles/style.css'/>
+</head>
+<body >
+<div style="text-align: right">    <button class="buttonDownload" type="button" name="download" value="Download" onclick="PrintDoc()">Print </button><br><br> </div>
+<div id=printarea style="text-align: center">
+    <h1 style="color: black">Daily report for the date   <%= date%></h1><br><br>
+    <table border="1" id="tableMain" class="responstable">
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Mobile</b></td>
+            <td><b>Email</b></td>
+            <td><b>Score</b></td>
+
+        </tr>
+        <%
+        for(var i=0;i<c;i++){
+        %>
+        <tr>
+            <td><%=name[i]%></td>
+            <td><%=mobile[i]%></td>
+            <td><%=email[i]%></td>
+            <td><%=resu[i]%></td>
+        </tr>
+        <%
+        }
+        %>
+    </table>
+</div>
+<script>
+    function PrintDoc() {
+        var toPrint = document.getElementById('printarea');
+        var popupWin = window.open('', '_blank', 'width=350,height=150,location=no,left=200px');
+        popupWin.document.open();
+        popupWin.document.write('<html><link rel="stylesheet" type="text/css" href="/styles/style.css" /></head><body onload="window.print()">')
+        popupWin.document.write(toPrint.innerHTML);
+        popupWin.document.write('</html>');
+        popupWin.document.close();
+    }
+</script>
+</body>
+</html>

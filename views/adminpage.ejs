@@ -1,0 +1,108 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/firstpage.css" />
+
+    <title>Admin</title>
+</head>
+
+<body>
+<div id="page">
+    <div id="pagetop">
+        <h3>ADMINISTRATOR</h3>
+        <div class="links">
+            <form method="post">
+                <ul>
+                    <li><button formaction="/logout" class="new1" >Logout</button></li>
+                    <li><button formaction="/quizdetail" class="new1">Quiz details</button></li>
+                    <li><button formaction="/adlogin" class="new1"> Admin</button></li>
+                    <li><button formaction="/admins" class="new1" >Question set</button></li>
+
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div id="main">
+        <div class="content">
+            <h1 style="color: #07144B"> Choose Department</h1><br><br>
+
+            <div class="main_body">
+                <select id="seldep"  onchange="changeFunc(<%=count%>)" class="Button" style="width: 100%" >
+
+                    <option disabled selected value> -- select an option -- </option>
+                    <%
+                    console.log(dep);
+                    console.log(count);
+                    for(var i=0;i<parseInt(count);i++)
+                    {
+                        console.log(dep[i]);
+                    %>
+                    <option  value="<%= dep[i]%>"><%=dep[i]%></option>
+                    <%
+                    }
+                    %>
+                </select><br><br>
+
+                <%
+                console.log(dep);
+                console.log(count);
+                for(var i=0;i<parseInt(count);i++)
+                {
+                    console.log(dep[i]);
+                %>
+                <form action="/admin/<%= dep[i] %>" method="get">
+                    <div id=idShowMe>
+                        <button type="submit" class="Button" id="<%= dep[i]%>" value="<%= dep[i]%>"  style="display: none">Go</button>
+                    </div>
+                </form><br>
+                <%
+                }
+                %>
+                <br>
+
+
+                <form action="/admin" method="get">
+                    <h1 style="color: #07144B">Add new Department  </h1><br><br>
+                    <input type="text" name="newname" class="new" placeholder="Enter the name of new question set" required="required" />
+                    <button class="Button" type="submit">Add</button>
+                    <br><br><br><br>
+                </form>
+                <!--<form action="/admin" method="get">-->
+                <!--<h1>&#9654;  Delete Department</h1><br><br>-->
+                <!--<input type="text" name="newname1" class="new" placeholder="Enter the name of department" required="required" />-->
+                <!--<button class="Button" type="submit">Delete</button>-->
+                <!--<br><br><br><br>-->
+                <!--</form>-->
+            </div>
+
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+    <div id="footer">
+        <p>
+            Msrmh quiz admin page.
+        </p>
+    </div>
+
+
+
+</div>
+
+<script>
+    function changeFunc(count) {
+        var selectBox = document.getElementById("seldep");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+        disableButtons(selectBox,count);
+        document.getElementById(selectedValue).style.display = 'block';
+    }
+    function disableButtons(selectBox,count) {
+        for(var i =1 ; i<=count ; i++){
+            var value = selectBox.options[i].value;
+            document.getElementById(value).style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
